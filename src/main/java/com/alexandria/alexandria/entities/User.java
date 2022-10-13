@@ -1,18 +1,15 @@
 package com.alexandria.alexandria.entities;
 
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @ToString
-
 @Table(name = "User")
 public class User extends Person{
     @Column(name = "Username", nullable = false)

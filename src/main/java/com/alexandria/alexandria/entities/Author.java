@@ -2,9 +2,9 @@ package com.alexandria.alexandria.entities;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -16,6 +16,9 @@ public class Author extends Person{
     private int birthYear;
     @Column(name = "DeathYear")
     private int deathYear;
+
+    @OneToMany(mappedBy = "author")
+    private Set<AuthorPrinted> authorPrinteds = new HashSet<>();
 
     public Author() {
         super();
