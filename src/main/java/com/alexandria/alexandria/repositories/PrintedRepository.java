@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PrintedRepository extends JpaRepository<Printed, Long> {
+    Printed findByTitle(String title);
 }

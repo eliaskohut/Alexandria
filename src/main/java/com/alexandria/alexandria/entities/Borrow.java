@@ -3,6 +3,7 @@ package com.alexandria.alexandria.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -16,9 +17,9 @@ public class Borrow {
     private Long id;
 
     @Column(name = "EndingDate")
-    private Date endingDate;
+    private LocalDate endingDate;
 
-    public Borrow(Date endingDate, Printed printed, User user) {
+    public Borrow(LocalDate endingDate, Printed printed, User user) {
         this.endingDate = endingDate;
         this.printed = printed;
         this.user = user;

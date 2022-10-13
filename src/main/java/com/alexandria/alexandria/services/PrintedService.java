@@ -1,5 +1,6 @@
 package com.alexandria.alexandria.services;
 
+import com.alexandria.alexandria.entities.Author;
 import com.alexandria.alexandria.entities.AuthorPrinted;
 import com.alexandria.alexandria.entities.Printed;
 import com.alexandria.alexandria.repositories.AuthorPrintedRepository;
@@ -13,19 +14,17 @@ import java.util.List;
 public class PrintedService {
     @Autowired
     PrintedRepository printedRepository;
+    @Autowired
+    AuthorPrintedRepository authorPrintedRepository;
 
     public PrintedService() {
     }
 
-    public List<Printed> getPrinted(){
+    public List<Printed> getPrinteds(){
         return printedRepository.findAll();
     }
 
-    public void addPrinted(Printed printed){
-        printedRepository.save(printed);
-    }
-
-    public void removePrinted(Printed printed) {
-        printedRepository.delete(printed);
+    public Printed getPrinted(Long id){
+        return printedRepository.getById(id);
     }
 }
