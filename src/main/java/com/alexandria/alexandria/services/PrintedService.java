@@ -17,7 +17,7 @@ public class PrintedService {
     public PrintedService() {
     }
 
-    public List<AuthorPrinted> getPrinted(){
+    public List<Printed> getPrinted(){
         return printedRepository.findAll();
     }
 
