@@ -2,9 +2,9 @@ package com.alexandria.alexandria.entities;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -21,6 +21,8 @@ public class User extends Person{
     @Column(name = "Role", nullable = false)
     private String role;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Borrow> borrows = new HashSet<>();
     public User() {
     }
 

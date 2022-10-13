@@ -14,7 +14,7 @@ import java.util.Set;
 public class Printed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Printed_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "Title", nullable = false)
     private String title;
@@ -40,4 +40,7 @@ public class Printed {
 
     @OneToMany(mappedBy = "printed", cascade = CascadeType.ALL)
     private Set<AuthorPrinted> authorPrinteds = new HashSet<>();
+
+    @OneToMany(mappedBy = "printed", cascade = CascadeType.ALL)
+    private Set<Borrow> borrows = new HashSet<>();
 }
