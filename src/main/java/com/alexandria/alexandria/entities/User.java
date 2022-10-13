@@ -10,18 +10,18 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@Table(name = "User")
+@Table(name = "user")
 public class User extends Person{
-    @Column(name = "Username", nullable = false)
+    @Column(name = "username", nullable = false)
     private String username;
-    @Column(name = "Email", nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
-    @Column(name = "Password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "Role", nullable = false)
+    @Column(name = "role", nullable = false)
     private String role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private Set<Borrow> borrows = new HashSet<>();
     public User() {
     }
