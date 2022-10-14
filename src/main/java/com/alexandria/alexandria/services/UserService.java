@@ -20,10 +20,7 @@ public class UserService {
     }
 
     public void addUser(User user) {
-        if(userRepository.findByEmail(user.getEmail())==null && userRepository.findByUsername(user.getUsername())==null){
-            userRepository.save(user);
-        }
-
+        userRepository.save(user);
     }
 
     public void removeUser(User user) {

@@ -20,11 +20,7 @@ public class AuthorService {
     }
 
     public void addAuthor(Author author){
-        if(authorRepository.findByNameAndSurnameAndBirthYear(
-                author.getName(), author.getSurname(), author.getBirthYear()
-        )==null){
-            authorRepository.save(author);
-        }
+        authorRepository.save(author);
     }
 
     public void removeAuthor(Author author) {
