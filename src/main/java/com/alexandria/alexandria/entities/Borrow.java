@@ -16,10 +16,14 @@ public class Borrow {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "EndingDate")
+    @Column(name = "issue_date")
+    private LocalDate issueDate;
+
+    @Column(name = "ending_date")
     private LocalDate endingDate;
 
-    public Borrow(LocalDate endingDate, Printed printed, User user) {
+    public Borrow(LocalDate issueDate, LocalDate endingDate, Printed printed, User user) {
+        this.issueDate = issueDate;
         this.endingDate = endingDate;
         this.printed = printed;
         this.user = user;

@@ -12,9 +12,9 @@ import java.util.Set;
 @ToString
 @Table(name = "Author")
 public class Author extends Person{
-    @Column(name = "BirthYear", nullable = false)
+    @Column(name = "birth_year", nullable = false)
     private int birthYear;
-    @Column(name = "DeathYear")
+    @Column(name = "death_yaer")
     private int deathYear;
 
     @OneToMany(mappedBy = "author")
