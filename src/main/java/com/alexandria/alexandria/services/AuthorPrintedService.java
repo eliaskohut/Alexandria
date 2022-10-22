@@ -37,4 +37,8 @@ public class AuthorPrintedService {
         authorPrintedRepository.delete(authorPrinted);
     }
 
+    public List<Printed> getPrintedByAuthor(Author author){
+        return authorPrintedRepository.findByAuthor(author);
+    }
+
 }
