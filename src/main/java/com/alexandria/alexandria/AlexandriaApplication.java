@@ -12,14 +12,14 @@ import java.util.Date;
 
 @SpringBootApplication
 public class AlexandriaApplication implements CommandLineRunner {
-    @Autowired
-    UserService userService;
+//    @Autowired
+//    UserService userService;
     @Autowired
     AuthorService authorService;
-    @Autowired
-    AuthorPrintedService authorPrintedService;
-    @Autowired
-    BorrowService borrowService;
+//    @Autowired
+//    AuthorPrintedService authorPrintedService;
+//    @Autowired
+//    BorrowService borrowService;
 
 
     public static void main(String[] args) {
@@ -28,16 +28,12 @@ public class AlexandriaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        User vitalik = new User("Vitalii", "Klichko", "vvityapobetitel",
-                "vklichko@ukr.net", "123321qwerty", "Admin");
-        Printed thusSpokeZarathustra = new Printed("Thus Spoke Zarathustra", 1883,
-                "Book", "Philosophy", 12.3);
-        userService.addUser(vitalik);
-        authorService.addAuthor(new Author("Friedrich", "Nietzsche", 1844, 1900));
-        authorPrintedService.addPrinted(new AuthorPrinted(authorService.getAuthor("Friedrich", "Nietzsche"),
-                thusSpokeZarathustra));
-        borrowService.addBorrow(new Borrow(LocalDate.now().plusDays(2),
-                thusSpokeZarathustra,
-                vitalik));
+        Author fnietzcshe = new Author("Friedrich", "Nietzsche", 1844, 1900);
+        Author fnietzcshe2 = new Author("Friedrich", "Nietzsche", 1844, 1900);
+        Author fnietzcshe5 = new Author("Fryderyk", "Nietzsche", 1844, 1900);
+        authorService.addAuthor(fnietzcshe);
+        authorService.addAuthor(fnietzcshe2);
+        authorService.addAuthor(fnietzcshe5);
+
     }
 }

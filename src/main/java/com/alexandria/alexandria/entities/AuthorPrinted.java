@@ -8,17 +8,17 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@Table(name = "Author_Printed")
+@Table(name = "author_printed")
 public class AuthorPrinted {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "Author_id")
+    @JoinColumn(name = "author_id")
     private Author author;
     @ManyToOne
-    @JoinColumn(name = "Printed_id")
+    @JoinColumn(name = "printed_id")
     private Printed printed;
 
     public AuthorPrinted() {

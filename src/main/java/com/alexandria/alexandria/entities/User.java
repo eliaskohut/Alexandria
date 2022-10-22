@@ -9,7 +9,6 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@ToString
 @Table(name = "user")
 public class User extends Person{
     @Column(name = "username", nullable = false)

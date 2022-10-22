@@ -9,22 +9,23 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@ToString
-@Table(name = "Printed")
+@Table(name = "printed")
 public class Printed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Column(name = "Title", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
-    @Column(name = "PublishYear", nullable = false)
+    @Column(name = "publish_year", nullable = false)
     private int publishYear;
-    @Column(name = "Type", nullable = false)
+    @Column(name = "type", nullable = false)
     private String type;
-    @Column(name = "Topic", nullable = false)
+    @Column(name = "topic", nullable = false)
     private String topic;
-    @Column(name = "Price", nullable = false)
+    @Column(name = "pages", nullable = false)
+    private int pages;
+    @Column(name = "price", nullable = false)
     private double price;
 
     public Printed() {
